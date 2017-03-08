@@ -21,6 +21,11 @@ public class ContainerActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottombar);
 
+        HomeFragment homeFragment = new HomeFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment)
+                .setTransition((FragmentTransaction.TRANSIT_FRAGMENT_FADE))
+                .addToBackStack(null).commit();
+
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
