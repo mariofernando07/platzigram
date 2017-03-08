@@ -12,10 +12,10 @@ import co.com.nexus.platzigram.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProgileFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
 
-    public ProgileFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
