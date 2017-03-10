@@ -1,6 +1,7 @@
 package co.com.nexus.platzigram.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 
 import co.com.nexus.platzigram.R;
 import co.com.nexus.platzigram.model.Picture;
+import co.com.nexus.platzigram.view.PictureDetailActivity;
 
 /**
  * Created by nexus on 8/03/17.
@@ -44,6 +46,14 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<PictureAdap
         holder.timeCard.setText(picture.getTime());
         holder.likeNumberCard.setText(picture.getLike_number());
         Picasso.with(activity).load(picture.getPicture()).into(holder.pictureCard);
+
+        holder.pictureCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, PictureDetailActivity.class);
+                activity.startActivity(intent);
+            }
+        });
     }
 
     @Override
